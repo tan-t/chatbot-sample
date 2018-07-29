@@ -6,4 +6,4 @@ const History = new Schema({
   msg: String
 });
 
-module.exports = History;
+module.exports = mongoose.model('History',History);
