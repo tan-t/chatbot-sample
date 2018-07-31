@@ -10,9 +10,9 @@ const historyController = new HistoryController();
 
 export default [
   {
-    method: 'post', route: '/chat', handler: chatController.chat,
+    method: 'post', route: '/chat', handler: chatController.chat.bind(chatController),
   },
   {
-    method: 'get', route: '/history/list', handler: historyController.list,
+    method: 'get', route: '/history/list', handler: historyController.list.bind(historyController),
   },
 ];
