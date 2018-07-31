@@ -11,7 +11,8 @@
     "lint": "eslint src/**/*.js"
   },
   "jest": {
-    "testURL": "http://localhost"
+    "testURL": "http://localhost",
+    "testPathIgnorePatterns": ["/config/environment/"]
   },
   "dependencies": {
     "axios": "^0.18.0",
