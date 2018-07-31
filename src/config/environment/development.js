@@ -6,17 +6,17 @@ export default {
     configure: {
       appenders: {
         access: {
-          type: 'console'
+          type: 'console',
         },
-        error : {
-          type: 'console'
-        }
+        error: {
+          type: 'console',
+        },
       },
       categories: {
-        default: {appenders:['access'],level: 'info'},
-        error: {appenders:['error'],level:'error'}
+        default: { appenders: ['access'], level: 'info' },
+        error: { appenders: ['error'], level: 'error' },
       },
-      replaceConsole: true
-    }
-  }
+      replaceConsole: true,
+    },
+  },
 };

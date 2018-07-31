@@ -1,9 +1,6 @@
-import History from '../model/History.js';
+import History from '../model/History';
 
-export class HistoryController {
-  constructor() {
-  }
-
+export default class HistoryController {
   async list(ctx, next) {
     const res = await History.paging(10, 0);
     ctx.body = res;

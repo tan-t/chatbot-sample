@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import History from '../model/History';
-import { HistoryController } from './HistoryController';
+import HistoryController from './HistoryController';
 
 describe('HistoryController',async ()=>{
   beforeEach(async () => {

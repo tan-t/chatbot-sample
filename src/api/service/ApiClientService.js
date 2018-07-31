@@ -1,7 +1,7 @@
 import axiosBase from 'axios';
 import env from '../../config/environment/index';
 
-export class ApiClientService {
+export default class ApiClientService {
   constructor() {
     this.axios = axiosBase.create({
       baseURL: 'https://api.openweathermap.org',

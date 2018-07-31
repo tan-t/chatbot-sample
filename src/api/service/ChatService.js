@@ -21,7 +21,7 @@ export class ChatService {
       case '今日の東京の天気は？':
         return this.respondTokyoWeather();
       default:
-        throw '返答できないメッセージです。';
+        throw { message: '返答できないメッセージです。' };
     }
   }
 

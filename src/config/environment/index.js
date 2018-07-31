@@ -7,9 +7,10 @@ export default function () {
   switch (envKey) {
     case 'test':
       return test;
-    case 'development':
-      return development;
     case 'production':
       return production;
+    case 'development':
+    default:
+      return development;
   }
 }

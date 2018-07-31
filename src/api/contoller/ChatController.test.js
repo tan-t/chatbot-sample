@@ -1,4 +1,4 @@
-import { ChatController } from './ChatController.js';
+import ChatController from './ChatController.js';
 import History from '../model/History.js';
 
 describe('ChatController',async ()=>{

@@ -1,7 +1,7 @@
-import History from '../model/History.js';
-import { Request } from '../service/ChatService.js';
+import History from '../model/History';
+import { Request } from '../service/ChatService';
 
-export class ChatController {
+export default class ChatController {
   constructor(chatService) {
     this.chatService = chatService;
   }

@@ -5,6 +5,7 @@ export default async (ctx, next) => {
   const start = new Date();
   await next();
   const ms = new Date() - start;
-  logger.info({timestamp: new Date(),url: ctx.url, httpMethod: ctx.method, elapsedTime: `${ms}ms`});
+  logger.info({
+    timestamp: new Date(), url: ctx.url, httpMethod: ctx.method, elapsedTime: `${ms}ms`,
+  });
 };
-

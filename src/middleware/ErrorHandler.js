@@ -11,7 +11,7 @@ export default async (ctx, next) => {
       message: err.message,
       timestamp: new Date(),
       url: ctx.url,
-      httpMethod: ctx.method
+      httpMethod: ctx.method,
     });
   }
 };
