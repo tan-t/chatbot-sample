@@ -1,5 +1,5 @@
 {
-  "name": "practice-server",
+  "name": "chatbot",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -16,7 +16,8 @@
   "jest": {
     "testURL": "http://localhost",
     "testPathIgnorePatterns": [
-      "/config/environment/","/client/"
+      "/config/environment/",
+      "/client/"
     ]
   },
   "dependencies": {
@@ -27,6 +28,8 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "log4js": "^3.0.3",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
     "mongoose": "^5.2.5"
   },
   "devDependencies": {

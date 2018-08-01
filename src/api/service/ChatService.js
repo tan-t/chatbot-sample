@@ -35,7 +35,7 @@ export class ChatService {
   }
 
   async respondCurrentTime(jstDate) {
-    return `${jstDate.getHours()}時${jstDate.getMinutes()}分です。`;
+    return `${jstDate.hours()}時${jstDate.minutes()}分です。`;
   }
 }
 

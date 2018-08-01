@@ -1,4 +1,5 @@
 import { ChatService, Request } from './ChatService.js';
+import moment from 'moment';
 
 describe('ChatService',()=>{
   it('respond weather properly', async () => {
@@ -70,18 +71,14 @@ describe('ChatService',()=>{
 
   it("respond 10時9分です。",async() => {
     const service = new ChatService();
-    const d = new Date();
-    d.setHours(10);
-    d.setMinutes(9);
+    const d = moment('2018-08-01 10:09');
     const response = await service.respondCurrentTime(d);
     expect(response).toBe('10時9分です。');
   });
 
   it("respond 10時9分です。 to 今何時？",async() => {
     const service = new ChatService();
-    const d = new Date();
-    d.setHours(10);
-    d.setMinutes(9);
+    const d = moment('2018-08-01 10:09');
     const message = new Request(d, '今何時？');
     const response = await service.respond(message);
     expect(response).toBe('10時9分です。');
