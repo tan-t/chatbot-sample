@@ -9,7 +9,9 @@
     "dev": "yarn build&& set NODE_ENV=development&& node dist/index.js",
     "build": "babel src --out-dir dist",
     "test": "jest src",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "postinstall": "yarn build",
+    "heroku-postbuild": "cd client && yarn && yarn build"
   },
   "jest": {
     "testURL": "http://localhost",
