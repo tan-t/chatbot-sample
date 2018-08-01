@@ -14,7 +14,7 @@ class App extends Component {
   }
   onClickSend = async (e) => {
     const user_input = this.state.text;
-    const request_timestamp= new Date();
+    const request_timestamp = new Date(Date.now());
     let response = await ApiClient.sendMessage(user_input);
     this.setState({
       conversations: [...this.state.conversations, {
