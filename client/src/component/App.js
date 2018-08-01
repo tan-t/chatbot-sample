@@ -14,13 +14,14 @@ class App extends Component {
   }
   onClickSend = async (e) => {
     const user_input = this.state.text;
+    const request_timestamp= new Date();
     let response = await ApiClient.sendMessage(user_input);
     this.setState({
       conversations: [...this.state.conversations, {
         user_input,
         bot_response: response.bot_response,
         response_timestamp: new Date(response.response_timestamp),
-        request_timestamp: new Date()
+        request_timestamp
       }]
     });
   }
