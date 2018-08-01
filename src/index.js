@@ -21,7 +21,7 @@ app.use(ErroHandler);
 const router = CustomRouter();
 app.use(router.routes());
 app.use(router.allowedMethods());
-app.use(serve(__dirname + '/public'));
+app.use(serve(`${__dirname}/public`));
 
 mongoose.connect(env().mongoUrl);
 
