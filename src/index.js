@@ -1,6 +1,5 @@
 import Koa from 'koa';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import log4js from 'log4js';
 import serve from 'koa-static';
 import bodyParser from 'koa-bodyparser';
@@ -8,8 +7,6 @@ import CustomRouter from './middleware/Router';
 import AccessLogger from './middleware/AccessLogger';
 import ErroHandler from './middleware/ErrorHandler';
 import env from './config/environment/index';
-
-dotenv.config();
 
 const app = new Koa();
 app.use(bodyParser());

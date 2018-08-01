@@ -15,7 +15,7 @@ export default class ApiClientService {
 
   async getTokyoWeather() {
     return this.axios.get('/data/2.5/weather', {
-      query: { id: 1850147, APPID: env().apiKey },
+      params: { id: 1850147, APPID: env().apiKey },
     }).then(res => res.data);
   }
 }

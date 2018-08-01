@@ -1,3 +1,3 @@
-export default {
-  mongoUrl: 'mongodb://localhost/test',
-};
+export default () => ({
+  mongoUrl: 'mongodb://localhost/test'
+});

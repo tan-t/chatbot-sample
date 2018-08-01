@@ -1,4 +1,4 @@
-export default {
+export default () => ({
   mongoUrl: 'mongodb://localhost/development',
   apiKey: process.env.API_KEY,
   log4js: {
@@ -19,4 +19,4 @@ export default {
       replaceConsole: true,
     },
   },
-};
+});
