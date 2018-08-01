@@ -1,9 +1,10 @@
 import History from '../model/History';
+import moment from 'moment-timezone';
 
 class HistoryResponse {
   constructor(model) {
     this.user_input = model.user_input;
-    this.response_timestamp = model.response_timestamp;
+    this.response_timestamp = moment(model.response_timestamp).tz('Asia/Tokyo').format();
     this.bot_response = model.bot_response;
   }
 }
