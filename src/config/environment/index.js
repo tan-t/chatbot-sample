@@ -8,11 +8,11 @@ export default function () {
   const envKey = process.env.NODE_ENV || 'development';
   switch (envKey) {
     case 'test':
-      return test;
+      return test();
     case 'production':
-      return production;
+      return production();
     case 'development':
     default:
-      return development;
+      return development();
   }
 }
