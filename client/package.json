@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build:dev": "react-scripts build&& move build ../dist/public",
-    "build": "react-scripts build&& mv build ../dist/public",
+    "build": "react-scripts build && mv build ../dist/public",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
