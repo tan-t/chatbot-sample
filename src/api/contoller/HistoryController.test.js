@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 import History from '../model/History';
 import HistoryController from './HistoryController';
+import env from '../../config/environment/test';
 
 describe('HistoryController',async ()=>{
   beforeEach(async () => {
-    await mongoose.connect('mongodb://localhost/test');
+    await mongoose.connect(env().mongoUrl);
   });
 
   afterEach(async () => {

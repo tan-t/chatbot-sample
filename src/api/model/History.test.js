@@ -4,7 +4,7 @@ import env from '../../config/environment/test';
 
 describe('History',async ()=>{
   beforeEach(async () => {
-    await mongoose.connect(env.mongoUrl);
+    await mongoose.connect(env().mongoUrl);
   });
 
   afterEach(async () => {
