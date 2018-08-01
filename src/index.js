@@ -25,4 +25,4 @@ app.use(serve(`${__dirname}/public`));
 
 mongoose.connect(env().mongoUrl);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
