@@ -1,5 +1,5 @@
 export default () => ({
-  mongoUrl: process.env.MONGO_URL,
+  mongoUrl: process.env.MONGODB_URI,
   apiKey: process.env.API_KEY,
   log4js: {
     level: 'INFO',
