@@ -5,3 +5,10 @@
 herokuに静的ファイルとAPサーバを置いています。  
 DBはmLabのmongoDBを利用しています。  
 天気情報はOpenWeatherMapのAPIをAPサーバから叩くことで取得しています。  
+
+## ディレクトリ階層
+
+∟ src  
+　∟ サーバーサイドのソース  
+∟ client  
+　∟ クライアントサイドのソース
