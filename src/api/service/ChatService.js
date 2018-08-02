@@ -5,6 +5,7 @@ const Translation = {
   Snow: '雪',
   Clear: '晴れ',
   Clouds: '曇り',
+  Atmosphere: '霧'
 };
 
 export class ChatService {
@@ -21,7 +22,7 @@ export class ChatService {
       case '今日の東京の天気は？':
         return this.respondTokyoWeather();
       default:
-        throw { message: '返答できないメッセージです。' };
+        return 'すみません、わかりません。';
     }
   }
 

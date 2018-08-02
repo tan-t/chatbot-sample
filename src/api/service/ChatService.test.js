@@ -83,4 +83,12 @@ describe('ChatService',()=>{
     const response = await service.respond(message);
     expect(response).toBe('10時9分です。');
   });
+
+  it("respond すみません、わかりません。 to ああああ",async() => {
+    const service = new ChatService();
+    const d = moment('2018-08-01 10:09');
+    const message = new Request(d, 'ああああ');
+    const response = await service.respond(message);
+    expect(response).toBe('すみません、わかりません。');
+  });
 });
