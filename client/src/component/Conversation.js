@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageList, MessageGroup, Message, MessageText } from '@livechat/ui-kit'
+import { Message, MessageText } from '@livechat/ui-kit'
 import './Conversation.css';
 
 const toHHMMSS = (d) => {
@@ -7,22 +7,9 @@ const toHHMMSS = (d) => {
 };
 function Conversation(props) {
   return (
-    <div style={{ height: 400 }}>
-      <MessageList active>
-        {props.conversations.map((c, inx) => {
-          return (
-            <MessageGroup key={String(inx)}>
-              <Message date={toHHMMSS(c.request_timestamp)} isOwn={true} authorName="you">
-                <MessageText>{c.user_input}</MessageText>
-              </Message>
-              <Message date={toHHMMSS(c.response_timestamp)} authorName="bot">
-                <MessageText>{c.bot_response}</MessageText>
-              </Message>
-            </MessageGroup>
-          );
-        })}
-      </MessageList>
-    </div>
+      <Message date={toHHMMSS(props.conversation.isOwn ? props.conversation.request_timestamp : props.conversation.response_timestamp)} isOwn={props.conversation.isOwn} authorName={props.conversation.isOwn ? "you" : "bot"}>
+        <MessageText>{props.conversation.isOwn ? props.conversation.user_input : props.conversation.bot_response}</MessageText>
+      </Message>
   );
 }
 

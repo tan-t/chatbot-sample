@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ThemeProvider, TextComposer, TextInput, SendButton, Row, defaultTheme } from '@livechat/ui-kit';
+import { ThemeProvider, TextComposer, TextInput, SendButton, Row, defaultTheme, MessageList } from '@livechat/ui-kit';
 import Conversation from './Conversation';
 import ApiClient from '../module/ApiClient';
 import './App.css';
@@ -15,15 +15,27 @@ class App extends Component {
   onClickSend = async (e) => {
     const user_input = this.state.text;
     const request_timestamp = new Date(Date.now());
-    let response = await ApiClient.sendMessage(user_input);
+
     this.setState({
       conversations: [...this.state.conversations, {
+        isOwn: true,
         user_input,
-        bot_response: response.bot_response,
-        response_timestamp: new Date(response.response_timestamp),
         request_timestamp
       }]
     });
+
+    try {
+      const response = await ApiClient.sendMessage(user_input);
+      this.setState({
+        conversations: [...this.state.conversations, {
+          isOwn: false,
+          bot_response: response.bot_response,
+          response_timestamp: new Date(response.response_timestamp)
+        }]
+      });
+    } catch (err) {
+      alert(err.message);
+    }
   }
   updateValue(value) {
     this.setState({text:value});
@@ -37,7 +49,13 @@ class App extends Component {
         <div>
           <ThemeProvider theme={defaultTheme}>
             <div>
-            <Conversation conversations={this.state.conversations}> </Conversation>
+              <div style={{ height: 800 }}>
+                <MessageList active>
+                  {this.state.conversations.map(c => {
+                    return (<Conversation conversation={c}> </Conversation>)
+                  })}
+                </MessageList>
+              </div>
             <TextComposer onChange={(e) => this.updateValue(e.target.value) } onSend={(e) => this.onClickSend(e)}>
               <Row align="center">
                 <TextInput onKeyDown={(e) => console.log(e) }/>

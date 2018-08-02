@@ -10,10 +10,6 @@ const axios = axiosBase.create({
 
 export default {
   async sendMessage(text) {
-    // const params = new URLSearchParams();
-    // params.append('user_input', text);
-    return axios.post('/chat', {user_input:text} /*,  {
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-    }*/).then(res => res.data);
+    return axios.post('/chat', {user_input:text} ).then(res => res.data);
   }
 }
